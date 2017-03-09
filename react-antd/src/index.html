@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../public/bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="App.js"></script>
+</head>
+<body>
+    <div class="app"></div>
+    <div class="container" >
+        <ul class="nav nav-tabs" id="menu">
+            <li><a href="#page1" data-toggle="tab">国内酒店</a></li>
+            <li><a href="#page2" data-toggle="tab">国外酒店</a></li>
+            <li ><a href="#page3" data-toggle="tab">酒店团购</a></li>
+        </ul>
+        <br/>
+        <form class="form-horizontal" style="display: block;">
+            <div class="form-group">
+                <label for="HD_CityName" class="col-sm-1 control-label">目的地</label>
+                <div class="col-sm-3">
+                    <input type="text" value="中文/拼音" class="form-control" name="CityName" id="HD_CityName" autocomplete="on" _cqnotice="中文/拼音"  />
+                    <input type="hidden" id="HD_CityId" name="cityId" value="" />
+                    <input type="hidden" id="HD_CityPy" name="cityPY" value="" />
+                </div>
+                <div class="s_item_hotel" id="HD_SearchHistory" style="display:none">
+                    <a class="s_history_btn" href="javascript:;"><i></i>搜索历史</a>
+                    <div class="history_list"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="HD_CheckIn" class="col-sm-1 control-label">入住日期</label>
+                <div class="col-sm-11">
+                    <input type="text" value="yyyy-mm-dd" name="checkIn" id="HD_CheckIn" autocomplete="off" _cqnotice="yyyy-mm-dd">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="HD_CheckIn" class="col-sm-1 control-label">退房日期</label>
+                <div class="col-sm-11">
+                    <input type="text" value="yyyy-mm-dd" name="checkOut" id="HD_CheckOut" autocomplete="off" _cqnotice="yyyy-mm-dd">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="searchHotelLevelSelect" class="col-sm-1 control-label">酒店级别</label>
+                <div class="col-sm-3">
+                    <select id="searchHotelLevelSelect" name="Star" class="form-control ">
+                        <option selected="selected" value="0">不限</option>
+                        <option value="5">五星级/豪华</option>
+                        <option value="4">四星级/高档</option>
+                        <option value="3">三星级/舒适</option>
+                        <option value="2">二星级以下/经济</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="s_button_area">
+                <input type="button" value="搜索" class="s_btn" title="搜索" id="HD_Btn" />
+            </div>
+        </form>
+
+    </div>
+    <script type="text/javascript">
+        var menuItem = document.querySelectorAll("#menu li");
+        var menuDom = document.querySelector('#menu')
+        var HD_CheckIn = document.querySelector('#HD_CheckIn')
+        //    当前页面的索引
+        var pageIndex = 0;
+        menuItem[pageIndex].classList.add("active");
+
+        menuDom.onclick = function (ev) {
+        menuItem[pageIndex].classList.remove("active");
+
+        }
+    </script>
+</body>
+</html>

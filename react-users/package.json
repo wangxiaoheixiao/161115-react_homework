@@ -1,11 +1,13 @@
 {
-  "name": "hello-world",
+  "name": "hello-users",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.9.3"
   },
   "dependencies": {
+    "pubsub-js": "^1.5.5",
+    "axios": "^0.15.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
